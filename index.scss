@@ -1,0 +1,35 @@
+@import './variables.scss';
+
+html{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16pt;
+    text-rendering: geometricPrecision;
+    body {
+        background: #222;
+
+        .header {
+            padding: 0px 20px;
+            padding-top: 14%;
+            box-sizing: border-box;
+            width: 80%;
+            margin: 0 auto;
+
+            p {
+                font-size: 1.5rem;
+                color: $off_white;
+            }
+            a {
+                color: $off_white;
+                text-decoration: underline;
+            }
+            .under-line {
+                width: 100%;
+
+                .under-line-inner {
+                    height: 5px;
+                    background-color: $off_white;
+                }
+            }
+        }
+    }
+}
