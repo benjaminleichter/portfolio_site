@@ -1,0 +1,19 @@
+{
+  "name": "portfolio_site",
+  "version": "1.0.0",
+  "description": "ben leichter's portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "portfolio_site"
+  },
+  "keywords": [
+    "ben",
+    "leichter"
+  ],
+  "author": "ben leichter",
+  "license": "ISC"
+}
