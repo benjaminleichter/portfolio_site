@@ -4,23 +4,64 @@ html{
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16pt;
     text-rendering: geometricPrecision;
+    p {
+        margin: 32px 0px;
+    }
+    a {
+        color: $off_white;
+        text-decoration: none;
+    }
     body {
-        background: #222;
+        background: $dark_grey;
 
-        .header {
-            padding: 0px 20px;
+        .hover-me {
+            opacity: 0.5;
+            cursor: pointer;
+            position: relative;
+            -webkit-transition: opacity 300ms;
+            -moz-transition: opacity 300ms;
+            -o-transition: opacity 300ms;
+            transition: opacity 300ms;
+
+            &.with-after {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0px;
+                    width: 100%;
+                    height: 2px;
+                    opacity: 0;
+                    background-color: $off_white;
+                    -webkit-transition: bottom 300ms;
+                    -moz-transition: bottom 300ms;
+                    -o-transition: bottom 300ms;
+                    transition: bottom 300ms;
+                }
+            }
+        }
+        .hover-me:hover {
+            opacity: 0.7;
+            border-bottom-color: $off_white;
+
+            &.with-after {
+                &:after {
+                    bottom: 0;
+                    opacity: 0.7;
+                }
+            }
+        }
+        .intro {
+            padding: $section_padding;
             padding-top: 14%;
             box-sizing: border-box;
-            width: 80%;
+            width: $section_width;
             margin: 0 auto;
 
             p {
-                font-size: 1.5rem;
+                font-size: 1.35em;
+                line-height: 1.25em;
                 color: $off_white;
-            }
-            a {
-                color: $off_white;
-                text-decoration: underline;
             }
             .under-line {
                 width: 100%;
@@ -29,6 +70,27 @@ html{
                     height: 5px;
                     background-color: $off_white;
                 }
+            }
+        }
+        .about-me {
+            padding: $section_padding;
+            box-sizing: border-box;
+            width: $section_width;
+            margin: 0 auto;
+
+            p {
+                color: $off_white;
+            }
+        }
+        .github-link {
+            width: 32px;
+            height: 32px;
+            margin-top: 32px;
+            float: left;
+
+            img {
+                width: 32px;
+                height: 32px;
             }
         }
     }
