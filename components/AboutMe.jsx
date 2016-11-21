@@ -10,6 +10,7 @@ class AboutMe extends React.Component {
 
         const workExperienceLinks = _.map(workExperience, (experience, id) => (
             <Link
+                className="work-experience-link"
                 key={ id }
                 to={ `work_experience/${id}/` }
             >
@@ -20,7 +21,7 @@ class AboutMe extends React.Component {
         return (
             <div className="about-me">
                 <p>
-                    Want to know more about me, huh? I'm flattered! I was born in upstate New York and moved to Boston to attend Northeastern University, where I got a dual degree in Music Technology/Composition and Interactive Media.
+                    Want to know more about me, huh? I'm flattered! I was born in upstate New York and moved to Boston to attend Northeastern University. I graduated in 2015 with a dual degree in Music Technology and Interactive Media.
                     <br />
                     <br />
                     Since then, I've been fortunate enough to work at these cool places:

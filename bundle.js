@@ -36957,6 +36957,27 @@
 	    introShown: true,
 	    selectedWorkExperience: null,
 	    workExperience: {
+	        bevspot: {
+	            name: 'BevSpot',
+	            role: 'Web Developer (Front-End/BackEnd)',
+	            datesOfEmployment: 'October 2015 - Current',
+	            url: 'https://www.bevspot.com',
+	            projects: [],
+	            description: 'At BevSpot, I work on a web app for bars and restaurants to manage their inventory, order from distributors, and track their sales data. We get a great deal of freedom to try new technologies as long as we can give sound reasons for how they might make our code better or improve the development process. As a result, I\'ve been able to start writing React apps and begin using TypeScript within the time that I\'ve been working here. In addition to working with interesting front-end technologies, I get to be involved in a lot of data design sessions and write a satisfying amount of Python and Java.',
+	            relevantSkills: ['JavaScript', 'ReactJS', 'TypeScript', 'Django', 'Java']
+	        },
+	        mtc: {
+	            name: 'MTC',
+	            role: 'Web Developer (Front-End/Back-End)',
+	            datesOfEmployment: 'October 2014 - October 2015',
+	            url: 'https://www.masstechnology.com/',
+	            projects: [{
+	                name: 'Vocoli',
+	                url: 'https://www.vocoli.com'
+	            }],
+	            description: 'At MTC, I mostly worked on an employee engagement software called Vocoli. I would receive a mock from our designer and build whole features from the ui to the stored procedures to get and set data.',
+	            relevantSkills: ['JavaScript', 'PHP', 'SQL']
+	        },
 	        harvard_cid: {
 	            name: 'Harvard CID',
 	            role: 'Front-End Web Developer',
@@ -36968,27 +36989,6 @@
 	            }],
 	            description: 'At CID, I worked on the front-end of a tool that visualizes the economic makeup of countries. The idea is to help nations make connections between products they make with the resources they have, and products they could be making with those same resources. They can also look at what countires their neighbors have been trading with and what they\'ve been trading. In this way, the can potentially find new partners for trade through neighboring countires.',
 	            relevantSkills: ['JavaScript', 'd3']
-	        },
-	        mtc: {
-	            name: 'Massachusettes Technology Corporation',
-	            role: 'Web Developer (Front-End/Back-End)',
-	            datesOfEmployment: 'October 2014 - October 2015',
-	            url: 'https://www.masstechnology.com/',
-	            projects: [{
-	                name: 'Vocoli',
-	                url: 'https://www.vocoli.com'
-	            }],
-	            description: 'At MTC, I worked on an employee engagement software called Vocoli. I would receive a mock-up from our designer and build features, from the ui to the stored procedures to get and set data.',
-	            relevantSkills: ['JavaScript', 'PHP', 'SQL']
-	        },
-	        bevspot: {
-	            name: 'BevSpot',
-	            role: 'Web Developer (Front-End/BackEnd)',
-	            datesOfEmployment: 'October 2015 - Current',
-	            url: 'https://www.bevspot.com',
-	            projects: [],
-	            description: 'At BevSpot, I work on a web app for bars and restaurants to manage their inventory, order from distributors, and track their sales data. We get a great deal of freedom to try new technologies as long as we can give sound reasons for how they might make our code better or improve the development process. As a result, I\'ve been able to start writing React apps and begin using TypeScript within the time that I\'ve been working here. In addition to working with interesting front-end technologies, I get to be involved in a lot of data design sessions and write a satisfying amount of Python and Java.',
-	            relevantSkills: ['JavaScript', 'ReactJS', 'TypeScript', 'Django', 'Java']
 	        }
 	    }
 	};
@@ -46684,6 +46684,7 @@
 	                return _react2.default.createElement(
 	                    _reactRouter.Link,
 	                    {
+	                        className: 'work-experience-link',
 	                        key: id,
 	                        to: 'work_experience/' + id + '/'
 	                    },
@@ -46697,7 +46698,7 @@
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'Want to know more about me, huh? I\'m flattered! I was born in upstate New York and moved to Boston to attend Northeastern University, where I got a dual degree in Music Technology/Composition and Interactive Media.',
+	                    'Want to know more about me, huh? I\'m flattered! I was born in upstate New York and moved to Boston to attend Northeastern University. I graduated in 2015 with a dual degree in Music Technology and Interactive Media.',
 	                    _react2.default.createElement('br', null),
 	                    _react2.default.createElement('br', null),
 	                    'Since then, I\'ve been fortunate enough to work at these cool places:'
@@ -46853,7 +46854,7 @@
 
 
 	// module
-	exports.push([module.id, "html {\n  font-family: 'Source Sans Pro', sans-serif;\n  font-size: 16pt;\n  text-rendering: geometricPrecision; }\n  html p {\n    margin: 32px 0px; }\n  html a {\n    color: #f9f9f9;\n    text-decoration: none; }\n  html body {\n    background: #222222; }\n    html body .hover-me {\n      opacity: 0.5;\n      cursor: pointer;\n      position: relative;\n      -webkit-transition: opacity 300ms;\n      -moz-transition: opacity 300ms;\n      -o-transition: opacity 300ms;\n      transition: opacity 300ms; }\n      html body .hover-me.with-after:after {\n        content: \"\";\n        position: absolute;\n        bottom: -5px;\n        left: 0px;\n        width: 100%;\n        height: 2px;\n        opacity: 0;\n        background-color: #f9f9f9;\n        -webkit-transition: bottom 300ms;\n        -moz-transition: bottom 300ms;\n        -o-transition: bottom 300ms;\n        transition: bottom 300ms; }\n    html body .hover-me:hover {\n      opacity: 0.7;\n      border-bottom-color: #f9f9f9; }\n      html body .hover-me:hover.with-after:after {\n        bottom: 0;\n        opacity: 0.7; }\n    html body .intro {\n      padding: 0px 20px;\n      padding-top: 14%;\n      box-sizing: border-box;\n      width: 80%;\n      margin: 0 auto; }\n      html body .intro p {\n        font-size: 1.35em;\n        line-height: 1.25em;\n        color: #f9f9f9; }\n      html body .intro .under-line {\n        width: 100%; }\n        html body .intro .under-line .under-line-inner {\n          height: 5px;\n          background-color: #f9f9f9; }\n    html body .about-me {\n      padding: 0px 20px;\n      box-sizing: border-box;\n      width: 80%;\n      margin: 0 auto; }\n      html body .about-me p {\n        color: #f9f9f9; }\n    html body .github-link {\n      width: 32px;\n      height: 32px;\n      margin-top: 32px;\n      float: left; }\n      html body .github-link img {\n        width: 32px;\n        height: 32px; }\n", ""]);
+	exports.push([module.id, "html {\n  font-family: 'Source Sans Pro', sans-serif;\n  font-size: 16pt;\n  text-rendering: geometricPrecision; }\n  html p {\n    margin: 32px 0px; }\n  html a {\n    color: #34495E;\n    text-decoration: none; }\n  html body {\n    background: #f9f9f9; }\n    html body .hover-me {\n      opacity: 0.7;\n      cursor: pointer;\n      position: relative;\n      color: #E74C3C;\n      -webkit-transition: opacity 100ms;\n      -moz-transition: opacity 100ms;\n      -o-transition: opacity 100ms;\n      transition: opacity 100ms; }\n    html body .hover-me:hover {\n      opacity: 1;\n      border-bottom-color: #34495E; }\n    html body .intro {\n      padding: 0px 20px;\n      padding-top: 14%;\n      box-sizing: border-box;\n      width: 80%;\n      margin: 0 auto; }\n      html body .intro p {\n        font-size: 1.35em;\n        line-height: 1.25em;\n        color: #34495E; }\n      html body .intro .under-line {\n        width: 100%; }\n        html body .intro .under-line .under-line-inner {\n          height: 5px;\n          background-color: #34495E; }\n    html body .about-me {\n      padding: 0px 20px;\n      box-sizing: border-box;\n      width: 80%;\n      margin: 0 auto; }\n      html body .about-me p {\n        color: #34495E; }\n      html body .about-me .work-experience-link {\n        float: left;\n        padding: 20px;\n        width: 30%;\n        margin-right: 3%;\n        text-align: center;\n        color: #f9f9f9;\n        font-weight: 700;\n        background-color: #3498DB;\n        box-sizing: border-box; }\n    html body .github-link {\n      background-color: #3498DB;\n      width: 31px;\n      height: 31px;\n      margin-top: 31px;\n      float: left;\n      border-radius: 100%; }\n      html body .github-link img {\n        width: 32px;\n        height: 32px; }\n", ""]);
 
 	// exports
 
@@ -47214,7 +47215,6 @@
 	                role = _props.role,
 	                url = _props.url;
 
-	            console.log(relevantSkills);
 	            var relevantSkillsElement = null;
 	            if (relevantSkills.length !== 0) {
 	                var listOfSkills = relevantSkills.join(', ');
@@ -47239,7 +47239,7 @@
 	                        { key: project.name, className: 'project' },
 	                        _react2.default.createElement(
 	                            'a',
-	                            { href: project.url, className: 'hover-me with-after' },
+	                            { href: project.url, target: '_', className: 'hover-me with-after' },
 	                            project.name
 	                        )
 	                    );
@@ -47260,10 +47260,7 @@
 	                { className: 'work-experience' },
 	                _react2.default.createElement(
 	                    'a',
-	                    {
-	                        className: 'experience-name hover-me with-after',
-	                        href: url
-	                    },
+	                    { className: 'experience-name hover-me with-after', href: url, target: '_' },
 	                    _react2.default.createElement(
 	                        'h4',
 	                        null,

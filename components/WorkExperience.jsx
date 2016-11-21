@@ -12,7 +12,6 @@ class WorkExperience extends React.Component {
             role,
             url,
         } = this.props;
-        console.log(relevantSkills);
         let relevantSkillsElement = null;
         if (relevantSkills.length !== 0) {
             const listOfSkills = relevantSkills.join(', ');
@@ -28,7 +27,7 @@ class WorkExperience extends React.Component {
             projectElements = _.map(projects, (project) => {
                 return (
                     <div key={ project.name } className="project">
-                        <a href={ project.url } className="hover-me with-after">{ project.name }</a>
+                        <a href={ project.url } target="_" className="hover-me with-after">{ project.name }</a>
                     </div>
                 )
             });
@@ -41,10 +40,7 @@ class WorkExperience extends React.Component {
         }
         return (
             <div className="work-experience">
-                <a
-                    className="experience-name hover-me with-after"
-                    href={ url }
-                >
+                <a className="experience-name hover-me with-after" href={ url } target="_">
                     <h4>{ name }</h4>
                 </a>
                 <p className="experience-dates">{ datesOfEmployment }</p>
