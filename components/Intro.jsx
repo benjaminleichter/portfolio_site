@@ -1,18 +1,19 @@
 import React, { PropTypes } from 'react';
-
+import { Link } from 'react-router';
 class Intro extends React.Component {
     render () {
         const {
-            showAboutMe,
+            setAboutMeShown,
         } = this.props;
 
         const aboutMeLinkElement = (
-            <span
-                className="hover-me with-after"
-                onClick={ showAboutMe }
-            >
-                about me
-            </span>
+            <Link to="about_me">
+                <span
+                    className="hover-me with-after"
+                >
+                    about me
+                </span>
+            </Link>
         );
         return (
             <div className="intro">
@@ -30,10 +31,6 @@ class Intro extends React.Component {
             </div>
         )
     }
-}
-
-Intro.propTypes = {
-    showAboutMe: PropTypes.func,
 }
 
 export default Intro;

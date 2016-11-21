@@ -1,59 +1,21 @@
 import _ from 'lodash';
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 class AboutMe extends React.Component {
     render () {
         const {
-            setSelectedWorkExperience,
             workExperience,
         } = this.props;
 
-        const workExperienceElements = _.map(workExperience, (experience, id) => {
-            let relevantSkillsElement = null;
-            if (experience.relevantSkills.length !== 0) {
-                const relevantSkills = experience.relevantSkills.join(', ');
-                relevantSkillsElement = (
-                    <p>
-                        <b>Relevant Skills:</b> { relevantSkills }
-                    </p>
-                );
-            }
-            let projectElements = null;
-            let projectElementList = null;
-            if (experience.projects.length !== 0) {
-                projectElements = _.map(experience.projects, (project) => {
-                    return (
-                        <div key={ project.name } className="project">
-                            <a href={ project.url } className="hover-me with-after">{ project.name }</a>
-                        </div>
-                    )
-                });
-                projectElementList = (
-                    <div className="project-element-list">
-                        <b>Projects:</b>
-                        { projectElements }
-                    </div>
-                );
-            }
-            return (
-                <div
-                    key={ id }
-                    className="work-experience-list-member"
-                >
-                    <a
-                        className="experience-name hover-me with-after"
-                        href={ experience.url }
-                    >
-                        <h4>{ experience.name }</h4>
-                    </a>
-                    <p className="experience-dates">{ experience.datesOfEmployment }</p>
-                    <p className="experience-role">{ experience.role }</p>
-                    <p className="experience-description">{ experience.description }</p>
-                    { projectElementList }
-                    { relevantSkillsElement }
-                </div>
-            );
-        })
+        const workExperienceLinks = _.map(workExperience, (experience, id) => (
+            <Link
+                key={ id }
+                to={ `work_experience/${id}/` }
+            >
+                { experience.name }
+            </Link>
+        ))
 
         return (
             <div className="about-me">
@@ -64,7 +26,7 @@ class AboutMe extends React.Component {
                     Since then, I've been fortunate enough to work at these cool places:
                 </p>
                 <div className="work-experience-list">
-                    { workExperienceElements }
+                    { workExperienceLinks }
                 </div>
             </div>
         )
@@ -72,8 +34,20 @@ class AboutMe extends React.Component {
 }
 
 AboutMe.propTypes = {
-    setSelectedWorkExperience: PropTypes.func,
-    workExperience: PropTypes.object,
+    workExperience: PropTypes.objectOf(
+        PropTypes.shape({
+            datesOfEmployment: PropTypes.string,
+            description: PropTypes.string,
+            name: PropTypes.string,
+            projects: PropTypes.arrayOf(
+                PropTypes.shape({
+                    name: PropTypes.string,
+                    url: PropTypes.string,
+                })),
+            relevantSkills: PropTypes.arrayOf(React.PropTypes.string),
+            role: PropTypes.string,
+            url: PropTypes.string
+        })),
 }
 
 export default AboutMe;

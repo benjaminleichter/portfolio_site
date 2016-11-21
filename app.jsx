@@ -1,9 +1,11 @@
+import _ from 'lodash';
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import AboutMe from './components/AboutMe.jsx';
 import Intro from './components/Intro.jsx';
+import WorkExperience from './components/WorkExperience.jsx';
 
 import actions from './actions.js';
 
@@ -16,24 +18,36 @@ class App extends React.Component {
             workExperience,
         } = this.props;
 
-        const handleIntroSetAboutMeShown = () => {
-            boundActions.setIntroShown(false);
-            boundActions.setAboutMeShown(true);
-        }
+        const childElement = [];
+        let childProps = {};
 
+        React.Children.map(this.props.children, (child) => {
+            childElement.push(child);
+        });
+
+        /*
+            Because any child of this component is a route,
+            there should only ever be one at a time.
+        */
+        if (childElement.length > 1) {
+            throw new Error('Unexpectedly more than one child element in App.jsx');
+        }
+        switch(childElement[0].type) {
+            case AboutMe:
+                childProps = {
+                    workExperience
+                };
+                break;
+            case WorkExperience:
+                const selectedWorkExperience = workExperience[this.props.params.id];
+                childProps = selectedWorkExperience;
+                break;
+            default:
+                break;
+        }
         return (
             <div className="app">
-                { introShown &&
-                    <Intro
-                        showAboutMe={ handleIntroSetAboutMeShown }
-                    />
-                }
-                { aboutMeShown &&
-                    <AboutMe
-                        setSelectedWorkExperience={ (selectedExperience) => console.log(selectedExperience) }
-                        workExperience={ workExperience }
-                    />
-                }
+                { React.cloneElement(this.props.children, childProps) }
             </div>
         )
     }

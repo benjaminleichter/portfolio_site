@@ -4,6 +4,7 @@ import { ActionTypes } from './actions.js';
 const initialState = {
     aboutMeShown: false,
     introShown: true,
+    selectedWorkExperience: null,
     workExperience: {
         harvard_cid: {
             name: 'Harvard CID',
@@ -55,12 +56,21 @@ const reduceSetIntroShown = (state, action) => {
     return _.assign(_.cloneDeep(state), updates);
 };
 
+const reduceSetSelectedWorkExperience = (state, action) => {
+    const updates = {
+        selectedWorkExperience: action.payload.selectedWorkExperience,
+    };
+    return _.assign(_.cloneDeep(state), updates);
+}
+
 const reducers = (state = initialState, action) => {
     switch(action.type) {
         case ActionTypes.SET_ABOUT_ME_SHOWN:
             return reduceSetAboutMeShown(state, action);
         case ActionTypes.SET_INTRO_SHOWN:
             return reduceSetIntroShown(state, action);
+        case ActionTypes.SET_SELECTED_WORK_EXPERIENCE:
+            return reduceSetSelectedWorkExperience(state, action);
         default:
             return state;
     }
