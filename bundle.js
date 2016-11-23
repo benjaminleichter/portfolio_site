@@ -82,11 +82,11 @@
 
 	var _Intro2 = _interopRequireDefault(_Intro);
 
-	var _WorkExperience = __webpack_require__(563);
+	var _WorkExperience = __webpack_require__(559);
 
 	var _WorkExperience2 = _interopRequireDefault(_WorkExperience);
 
-	__webpack_require__(559);
+	__webpack_require__(560);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46546,7 +46546,7 @@
 
 	var _Intro2 = _interopRequireDefault(_Intro);
 
-	var _WorkExperience = __webpack_require__(563);
+	var _WorkExperience = __webpack_require__(559);
 
 	var _WorkExperience2 = _interopRequireDefault(_WorkExperience);
 
@@ -46684,7 +46684,7 @@
 	                return _react2.default.createElement(
 	                    _reactRouter.Link,
 	                    {
-	                        className: 'work-experience-link',
+	                        className: 'work-experience-link ' + id,
 	                        key: id,
 	                        to: 'work_experience/' + id + '/'
 	                    },
@@ -46696,17 +46696,35 @@
 	                'div',
 	                { className: 'about-me' },
 	                _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    'Want to know more about me, huh? I\'m flattered! I was born in upstate New York and moved to Boston to attend Northeastern University. I graduated in 2015 with a dual degree in Music Technology and Interactive Media.',
-	                    _react2.default.createElement('br', null),
-	                    _react2.default.createElement('br', null),
-	                    'Since then, I\'ve been fortunate enough to work at these cool places:'
+	                    _reactRouter.Link,
+	                    { to: '/' },
+	                    'Home'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'inner' },
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        'Want to know more about me, huh? I\'m flattered! I was born in upstate New York and moved to Boston to attend Northeastern University. I graduated in 2015 with a dual degree in Music Technology and Interactive Media.',
+	                        _react2.default.createElement('br', null),
+	                        _react2.default.createElement('br', null),
+	                        'Since then, I\'ve been fortunate enough to work at these cool places:'
+	                    )
 	                ),
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'work-experience-list' },
 	                    workExperienceLinks
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'inner' },
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        'I like writing code, making music, learning new stuff, and watching Arrested Development even though I\'ve seen the whole thing already.'
+	                    )
 	                )
 	            );
 	        }
@@ -46823,13 +46841,168 @@
 /* 559 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _lodash = __webpack_require__(553);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(498);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var WorkExperience = function (_React$Component) {
+	    _inherits(WorkExperience, _React$Component);
+
+	    function WorkExperience() {
+	        _classCallCheck(this, WorkExperience);
+
+	        return _possibleConstructorReturn(this, (WorkExperience.__proto__ || Object.getPrototypeOf(WorkExperience)).apply(this, arguments));
+	    }
+
+	    _createClass(WorkExperience, [{
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props,
+	                datesOfEmployment = _props.datesOfEmployment,
+	                description = _props.description,
+	                name = _props.name,
+	                projects = _props.projects,
+	                relevantSkills = _props.relevantSkills,
+	                role = _props.role,
+	                url = _props.url;
+
+	            var relevantSkillsElement = null;
+	            if (relevantSkills.length !== 0) {
+	                var listOfSkills = relevantSkills.join(', ');
+	                relevantSkillsElement = _react2.default.createElement(
+	                    'p',
+	                    { className: 'relevant-skills' },
+	                    _react2.default.createElement(
+	                        'b',
+	                        null,
+	                        'Relevant Skills:'
+	                    ),
+	                    ' ',
+	                    listOfSkills
+	                );
+	            }
+	            var projectElements = null;
+	            var projectElementList = null;
+	            if (projects.length !== 0) {
+	                projectElements = _lodash2.default.map(projects, function (project) {
+	                    return _react2.default.createElement(
+	                        'div',
+	                        { key: project.name, className: 'project' },
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: project.url, target: '_', className: 'hover-me with-after' },
+	                            project.name
+	                        )
+	                    );
+	                });
+	                projectElementList = _react2.default.createElement(
+	                    'div',
+	                    { className: 'project-element-list' },
+	                    _react2.default.createElement(
+	                        'b',
+	                        null,
+	                        'Projects:'
+	                    ),
+	                    projectElements
+	                );
+	            }
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'work-experience' },
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/about_me/' },
+	                    'About Me'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'inner' },
+	                    _react2.default.createElement(
+	                        'a',
+	                        { className: 'experience-name hover-me with-after', href: url, target: '_' },
+	                        _react2.default.createElement(
+	                            'h4',
+	                            null,
+	                            name
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        { className: 'experience-dates' },
+	                        datesOfEmployment
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        { className: 'experience-role' },
+	                        role
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        { className: 'experience-description' },
+	                        description
+	                    ),
+	                    projectElementList,
+	                    relevantSkillsElement,
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'under-line' },
+	                        _react2.default.createElement('div', { className: 'under-line-inner' })
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return WorkExperience;
+	}(_react2.default.Component);
+
+	WorkExperience.propTypes = {
+	    datesOfEmployment: _react.PropTypes.string,
+	    description: _react.PropTypes.string,
+	    name: _react.PropTypes.string,
+	    projects: _react.PropTypes.arrayOf(_react.PropTypes.shape({
+	        name: _react.PropTypes.string,
+	        url: _react.PropTypes.string
+	    })),
+	    relevantSkills: _react.PropTypes.arrayOf(_react2.default.PropTypes.string),
+	    role: _react.PropTypes.string,
+	    url: _react.PropTypes.string
+	};
+	exports.default = WorkExperience;
+
+/***/ },
+/* 560 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(560);
+	var content = __webpack_require__(561);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(562)(content, {});
+	var update = __webpack_require__(563)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -46846,21 +47019,21 @@
 	}
 
 /***/ },
-/* 560 */
+/* 561 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(561)();
+	exports = module.exports = __webpack_require__(562)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "html {\n  font-family: 'Source Sans Pro', sans-serif;\n  font-size: 16pt;\n  text-rendering: geometricPrecision; }\n  html p {\n    margin: 32px 0px; }\n  html a {\n    color: #34495E;\n    text-decoration: none; }\n  html body {\n    background: #f9f9f9; }\n    html body .hover-me {\n      opacity: 0.7;\n      cursor: pointer;\n      position: relative;\n      color: #E74C3C;\n      -webkit-transition: opacity 100ms;\n      -moz-transition: opacity 100ms;\n      -o-transition: opacity 100ms;\n      transition: opacity 100ms; }\n    html body .hover-me:hover {\n      opacity: 1;\n      border-bottom-color: #34495E; }\n    html body .intro {\n      padding: 0px 20px;\n      padding-top: 14%;\n      box-sizing: border-box;\n      width: 80%;\n      margin: 0 auto; }\n      html body .intro p {\n        font-size: 1.35em;\n        line-height: 1.25em;\n        color: #34495E; }\n      html body .intro .under-line {\n        width: 100%; }\n        html body .intro .under-line .under-line-inner {\n          height: 5px;\n          background-color: #34495E; }\n    html body .about-me {\n      padding: 0px 20px;\n      box-sizing: border-box;\n      width: 80%;\n      margin: 0 auto; }\n      html body .about-me p {\n        color: #34495E; }\n      html body .about-me .work-experience-link {\n        float: left;\n        padding: 20px;\n        width: 30%;\n        margin-right: 3%;\n        text-align: center;\n        color: #f9f9f9;\n        font-weight: 700;\n        background-color: #3498DB;\n        box-sizing: border-box; }\n    html body .github-link {\n      background-color: #3498DB;\n      width: 31px;\n      height: 31px;\n      margin-top: 31px;\n      float: left;\n      border-radius: 100%; }\n      html body .github-link img {\n        width: 32px;\n        height: 32px; }\n", ""]);
+	exports.push([module.id, "html {\n  font-family: 'Source Sans Pro', sans-serif;\n  font-size: 16pt;\n  text-rendering: geometricPrecision; }\n  html p {\n    margin: 32px 0px; }\n  html a {\n    color: #34495e;\n    text-decoration: none; }\n  html body {\n    background: #f9f9f9;\n    margin: 0px;\n    padding: 0px; }\n    html body .inner {\n      padding: 0px 20px;\n      box-sizing: border-box;\n      width: 80%;\n      margin: 0 auto; }\n      html body .inner p {\n        float: left; }\n    html body .under-line {\n      width: 100%; }\n      html body .under-line .under-line-inner {\n        height: 5px;\n        background-color: #34495e; }\n    html body .hover-me {\n      opacity: 0.7;\n      cursor: pointer;\n      position: relative;\n      color: #e74c3c;\n      -webkit-transition: opacity 100ms;\n      -moz-transition: opacity 100ms;\n      -o-transition: opacity 100ms;\n      transition: opacity 100ms; }\n    html body .hover-me:hover {\n      opacity: 1; }\n    html body .intro {\n      padding: 0px 20px;\n      padding-top: 14%;\n      box-sizing: border-box;\n      width: 80%;\n      margin: 0 auto; }\n      html body .intro p {\n        font-size: 1.35em;\n        line-height: 1.25em;\n        color: #34495e; }\n    html body .about-me p {\n      font-size: 1.35em;\n      line-height: 1.25em;\n      color: #34495e; }\n    html body .about-me .work-experience-list {\n      width: 100%;\n      display: block; }\n    html body .about-me .work-experience-link {\n      float: left;\n      padding: 20px;\n      padding-top: 4.5em;\n      width: 33.33%;\n      height: 10em;\n      text-align: center;\n      color: #f9f9f9;\n      font-weight: 700;\n      font-size: 1em;\n      background-color: #e74c3c;\n      box-sizing: border-box;\n      text-decoration: none; }\n      html body .about-me .work-experience-link.bevspot {\n        background-color: #fcb851; }\n      html body .about-me .work-experience-link.mtc {\n        background-color: #3498db; }\n      html body .about-me .work-experience-link:hover {\n        text-decoration: underline; }\n    html body .work-experience {\n      float: left; }\n      html body .work-experience p {\n        float: none; }\n      html body .work-experience .relevant-skills,\n      html body .work-experience .project-element-list {\n        width: 100%; }\n    html body .github-link {\n      background-color: #3498db;\n      width: 31px;\n      height: 31px;\n      margin-top: 31px;\n      float: left;\n      border-radius: 100%; }\n      html body .github-link img {\n        width: 32px;\n        height: 32px; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 561 */
+/* 562 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -46915,7 +47088,7 @@
 	};
 
 /***/ },
-/* 562 */
+/* 563 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -47165,145 +47338,6 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
-
-/***/ },
-/* 563 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _lodash = __webpack_require__(553);
-
-	var _lodash2 = _interopRequireDefault(_lodash);
-
-	var _react = __webpack_require__(299);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var WorkExperience = function (_React$Component) {
-	    _inherits(WorkExperience, _React$Component);
-
-	    function WorkExperience() {
-	        _classCallCheck(this, WorkExperience);
-
-	        return _possibleConstructorReturn(this, (WorkExperience.__proto__ || Object.getPrototypeOf(WorkExperience)).apply(this, arguments));
-	    }
-
-	    _createClass(WorkExperience, [{
-	        key: 'render',
-	        value: function render() {
-	            var _props = this.props,
-	                datesOfEmployment = _props.datesOfEmployment,
-	                description = _props.description,
-	                name = _props.name,
-	                projects = _props.projects,
-	                relevantSkills = _props.relevantSkills,
-	                role = _props.role,
-	                url = _props.url;
-
-	            var relevantSkillsElement = null;
-	            if (relevantSkills.length !== 0) {
-	                var listOfSkills = relevantSkills.join(', ');
-	                relevantSkillsElement = _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    _react2.default.createElement(
-	                        'b',
-	                        null,
-	                        'Relevant Skills:'
-	                    ),
-	                    ' ',
-	                    listOfSkills
-	                );
-	            }
-	            var projectElements = null;
-	            var projectElementList = null;
-	            if (projects.length !== 0) {
-	                projectElements = _lodash2.default.map(projects, function (project) {
-	                    return _react2.default.createElement(
-	                        'div',
-	                        { key: project.name, className: 'project' },
-	                        _react2.default.createElement(
-	                            'a',
-	                            { href: project.url, target: '_', className: 'hover-me with-after' },
-	                            project.name
-	                        )
-	                    );
-	                });
-	                projectElementList = _react2.default.createElement(
-	                    'div',
-	                    { className: 'project-element-list' },
-	                    _react2.default.createElement(
-	                        'b',
-	                        null,
-	                        'Projects:'
-	                    ),
-	                    projectElements
-	                );
-	            }
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'work-experience' },
-	                _react2.default.createElement(
-	                    'a',
-	                    { className: 'experience-name hover-me with-after', href: url, target: '_' },
-	                    _react2.default.createElement(
-	                        'h4',
-	                        null,
-	                        name
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'p',
-	                    { className: 'experience-dates' },
-	                    datesOfEmployment
-	                ),
-	                _react2.default.createElement(
-	                    'p',
-	                    { className: 'experience-role' },
-	                    role
-	                ),
-	                _react2.default.createElement(
-	                    'p',
-	                    { className: 'experience-description' },
-	                    description
-	                ),
-	                projectElementList,
-	                relevantSkillsElement
-	            );
-	        }
-	    }]);
-
-	    return WorkExperience;
-	}(_react2.default.Component);
-
-	WorkExperience.propTypes = {
-	    datesOfEmployment: _react.PropTypes.string,
-	    description: _react.PropTypes.string,
-	    name: _react.PropTypes.string,
-	    projects: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-	        name: _react.PropTypes.string,
-	        url: _react.PropTypes.string
-	    })),
-	    relevantSkills: _react.PropTypes.arrayOf(_react2.default.PropTypes.string),
-	    role: _react.PropTypes.string,
-	    url: _react.PropTypes.string
-	};
-	exports.default = WorkExperience;
 
 /***/ }
 /******/ ]);

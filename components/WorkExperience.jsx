@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 class WorkExperience extends React.Component {
     render() {
@@ -16,7 +17,7 @@ class WorkExperience extends React.Component {
         if (relevantSkills.length !== 0) {
             const listOfSkills = relevantSkills.join(', ');
             relevantSkillsElement = (
-                <p>
+                <p className="relevant-skills">
                     <b>Relevant Skills:</b> { listOfSkills }
                 </p>
             );
@@ -40,14 +41,20 @@ class WorkExperience extends React.Component {
         }
         return (
             <div className="work-experience">
-                <a className="experience-name hover-me with-after" href={ url } target="_">
-                    <h4>{ name }</h4>
-                </a>
-                <p className="experience-dates">{ datesOfEmployment }</p>
-                <p className="experience-role">{ role }</p>
-                <p className="experience-description">{ description }</p>
-                { projectElementList }
-                { relevantSkillsElement }
+                <Link to="/about_me/">About Me</Link>
+                <div className="inner">
+                    <a className="experience-name hover-me with-after" href={ url } target="_">
+                        <h4>{ name }</h4>
+                    </a>
+                    <p className="experience-dates">{ datesOfEmployment }</p>
+                    <p className="experience-role">{ role }</p>
+                    <p className="experience-description">{ description }</p>
+                    { projectElementList }
+                    { relevantSkillsElement }
+                    <div className="under-line">
+                        <div className="under-line-inner" />
+                    </div>
+                </div>
             </div>
         );
     }

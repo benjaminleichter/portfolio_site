@@ -13,7 +13,27 @@ html{
     }
     body {
         background: $off_white;
+        margin: 0px;
+        padding: 0px;
 
+        .inner {
+            padding: $section_padding;
+            box-sizing: border-box;
+            width: $section_width;
+            margin: 0 auto;
+
+            p {
+                float: left;
+            }
+        }
+        .under-line {
+            width: 100%;
+
+            .under-line-inner {
+                height: 5px;
+                background-color: $dark_blue;
+            }
+        }
         .hover-me {
             opacity: 0.7;
             cursor: pointer;
@@ -27,7 +47,6 @@ html{
         }
         .hover-me:hover {
             opacity: 1;
-            border-bottom-color: $dark_blue;
         }
         .intro {
             padding: $section_padding;
@@ -41,34 +60,51 @@ html{
                 line-height: 1.25em;
                 color: $dark_blue;
             }
-            .under-line {
-                width: 100%;
-
-                .under-line-inner {
-                    height: 5px;
-                    background-color: $dark_blue;
-                }
-            }
         }
         .about-me {
-            padding: $section_padding;
-            box-sizing: border-box;
-            width: $section_width;
-            margin: 0 auto;
 
             p {
+                font-size: 1.35em;
+                line-height: 1.25em;
                 color: $dark_blue;
+            }
+            .work-experience-list {
+                width: 100%;
+                display: block;
             }
             .work-experience-link {
                 float: left;
                 padding: 20px;
-                width: 30%;
-                margin-right: 3%;
+                padding-top: 4.5em;
+                width: 33.33%;
+                height: 10em;
                 text-align: center;
                 color: $off_white;
                 font-weight: 700;
-                background-color: $blue;
+                font-size: 1em;
+                background-color: $red;
                 box-sizing: border-box;
+                text-decoration: none;
+
+                &.bevspot {
+                    background-color: $bevspot;
+                }
+                &.mtc {
+                    background-color: $blue;
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .work-experience {
+            float: left;
+            p {
+                float: none;
+            }
+            .relevant-skills,
+            .project-element-list {
+                width: 100%;
             }
         }
         .github-link {
