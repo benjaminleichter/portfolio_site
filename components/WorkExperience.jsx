@@ -50,7 +50,7 @@ class WorkExperience extends React.Component {
 
         return (
             <div className="work-experience">
-                <Link to="/about_me/">
+                <Link to="/">
                     <span className="icon back-arrow-icon light" />
                 </Link>
                 <div className={ `header ${ id }` }>

@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import AboutMe from './components/AboutMe.jsx';
-import Intro from './components/Intro.jsx';
 import WorkExperience from './components/WorkExperience.jsx';
 
 import actions from './actions.js';
@@ -33,16 +32,14 @@ class App extends React.Component {
             throw new Error('Unexpectedly more than one child element in App.jsx');
         }
         switch(childElement[0].type) {
-            case AboutMe:
-                childProps = {
-                    workExperience
-                };
-                break;
             case WorkExperience:
                 const selectedWorkExperience = workExperience[this.props.params.id];
                 childProps = selectedWorkExperience;
                 break;
             default:
+                childProps = {
+                    workExperience
+                };
                 break;
         }
         return (

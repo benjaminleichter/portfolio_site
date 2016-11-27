@@ -24,8 +24,8 @@ const initialState = {
                 name: 'Vocoli',
                 url: 'https://www.vocoli.com',
             }],
-            description: 'At MTC, I mostly worked on an employee engagement software called Vocoli. I would receive a mock from our designer and build whole features from the ui to the stored procedures to get and set data.',
-            relevantSkills: ['JavaScript', 'PHP', 'SQL']
+            description: 'At MTC, I mostly worked on an employee engagement software called Vocoli. The jist of Vocoli is to empower employees through anonymous suggestions and polls, and to give management the tools to create surveys and gather informations from the data collected by them. I would receive a mock from our designer and build whole features starting with the UI, all the way through to the database.',
+            relevantSkills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'SQL']
         },
         'harvard-cid': {
             name: 'Harvard CID',
@@ -36,8 +36,8 @@ const initialState = {
                 name: 'Atlas of Economic Complexity',
                 url: 'http://atlas.cid.harvard.edu/',
             }],
-            description: 'At CID, I worked on the front-end of a tool that visualizes the economic makeup of countries. The idea is to help nations make connections between products they make with the resources they have, and products they could be making with those same resources. They can also look at what countires their neighbors have been trading with and what they\'ve been trading. In this way, the can potentially find new partners for trade through neighboring countires.',
-            relevantSkills: ['JavaScript', 'd3'],
+            description: 'At CID, I worked on the front-end of a tool that visualizes the economic makeup of countries. The idea is to help nations make connections between products they make with the resources they have, and products they could be making with those same resources. They can also look at what countries their neighbors have been trading with and what they\'ve been trading. In this way, they can potentially find new partners with minimal effort.',
+            relevantSkills: ['HTML', 'CSS', 'JavaScript', 'd3'],
         },
     }
 };

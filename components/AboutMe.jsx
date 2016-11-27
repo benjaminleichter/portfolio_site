@@ -22,22 +22,33 @@ class AboutMe extends React.Component {
 
         return (
             <div className="about-me">
-                <Link to="/">
-                    <span className="icon back-arrow-icon" />
-                </Link>
-                <div className="inner">
-                    <p className="margin-top-2-em">
-                        Want to know more about me, huh? I'm flattered! I was born in upstate New York and moved to Boston to attend Northeastern University. I graduated in 2015 with a dual degree in Music Technology and Interactive Media.
-                        <br />
-                        <br />
-                        Since then, I've been fortunate enough to work at these cool places:
-                    </p>
+                <div className="header">
+                    <div className="inner">
+                        <p className="page-title dark">Hey, I'm Ben.</p>
+                    </div>
                 </div>
-                <div className="work-experience-list">
-                    { workExperienceLinks }
-                </div>
-                <div className="inner">
-                    <p>I like writing code, making music, learning new stuff, and watching Arrested Development even though I've seen the whole thing already.</p>
+                <div className="body">
+                    <div className="inner">
+                        <p>
+                            I'm a web developer currently living in Boston, Massachusetts. I graduated from Northeastern University in 2015 with a dual degree in Music Technology and Interactive Media.
+                            <br />
+                            <br />
+                            Since then, I've been fortunate enough to work at these wonderful places:
+                        </p>
+                    </div>
+                    <div className="work-experience-list">
+                        { workExperienceLinks }
+                    </div>
+                    <div className="inner">
+                        <div className="under-line">
+                            <div className="under-line-inner" />
+                        </div>
+                        <span className="footer-text">
+                            Check out the code for this website on <a href="https://github.com/benjaminleichter/portfolio_site" target="_">GitHub</a>.
+                            <br />
+                            Icons on this site created by <a href="https://thenounproject.com/ryo.sato.7127/" target="_">Ryo Sato</a> and used under the <a href="https://creativecommons.org/" target="_">Creative Commons License</a>.
+                        </span>
+                    </div>
                 </div>
             </div>
         )

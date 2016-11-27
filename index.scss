@@ -17,8 +17,9 @@ html {
 
     p {
         color: $dark_blue;
-        margin: 32px 0px;
-        font-size: 1em;
+        margin: 1.25em 0;
+        font-size: 1.35em;
+        line-height: 1.25em;
 
         &.page-title {
             font-size: 2.5em;
@@ -71,6 +72,10 @@ html {
                 color: $off_white;
                 font-variant-ligatures: common-ligatures;
                 margin: 1em 0em 0.5em 0em;
+
+                &.dark {
+                    color: $dark_blue;
+                }
             }
             &.bevspot {
                 background-color: $bevspot;
@@ -85,7 +90,6 @@ html {
         .body {
             float: left;
             width: 100%;
-            padding-top: 1em;
         }
         .inner {
             padding: $section_padding;
@@ -104,46 +108,36 @@ html {
         }
         .under-line {
             width: 100%;
+            float: left;
+            margin: 1em 0;
 
             .under-line-inner {
-                height: 5px;
+                height: .2em;
                 background-color: $dark_blue;
             }
         }
         .hover-me {
-            opacity: 0.7;
-            cursor: pointer;
-            position: relative;
-            color: $red;
-            -webkit-transition: opacity 100ms;
-            -moz-transition: opacity 100ms;
-            -o-transition: opacity 100ms;
-            transition: opacity 100ms;
 
-        }
-        .hover-me:hover {
-            opacity: 1;
-        }
-        .intro {
-            padding: $section_padding;
-            padding-top: 14%;
-            box-sizing: border-box;
-            width: $section_width;
-            margin: 0 auto;
-
-            p {
-                font-size: 1.35em;
-                line-height: 1.25em;
-                color: $dark_blue;
+            &.bevspot {
+                color: $bevspot;
             }
+            &.mtc {
+                color: $blue;
+            }
+            &.harvard-cid {
+                color: $red;
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .footer-text {
+            font-size: .7em;
+            float: left;
+            margin-bottom: 1.5em;
         }
         .about-me {
 
-            p {
-                font-size: 1.35em;
-                line-height: 1.25em;
-                color: $dark_blue;
-            }
             .work-experience-list {
                 width: 100%;
                 display: block;
@@ -191,6 +185,9 @@ html {
             .project {
                 display: inline;
             }
+            .body {
+                padding-top: 1em;
+            }
         }
         .github-link {
             background-color: $blue;
@@ -208,9 +205,9 @@ html {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-device-width: 500px) {
     html {
-        font-size: 14pt;
+        font-size: 33pt;
 
         body {
             .about-me {

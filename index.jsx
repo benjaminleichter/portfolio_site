@@ -11,18 +11,17 @@ import reducers from './reducers.js';
 
 import App from './app.jsx';
 import AboutMe from './components/AboutMe.jsx';
-import Intro from './components/Intro.jsx';
 import WorkExperience from './components/WorkExperience.jsx';
 
 import './index.scss';
 
 const store = createStore(reducers);
+const scrollToTop = () => window.scrollTo(0, 0);
 ReactDOM.render(
     <Provider store={ store }>
-        <Router history={ hashHistory }>
+        <Router onUpdate={ scrollToTop } history={ hashHistory }>
             <Route path="/" component={ App }>
-                <IndexRoute component={ Intro } />
-                <Route path="about_me" component={ AboutMe } />
+                <IndexRoute component={ AboutMe } />
                 <Route path="work_experience/:id" component={ WorkExperience } />
             </Route>
         </Router>
