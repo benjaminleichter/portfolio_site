@@ -12,7 +12,11 @@ class WorkExperience extends React.Component {
             relevantSkills,
             role,
             url,
+            key
         } = this.props;
+
+        const id = this.props.params.id;
+
         let relevantSkillsElement = null;
         if (relevantSkills.length !== 0) {
             const listOfSkills = relevantSkills.join(', ');
@@ -22,13 +26,17 @@ class WorkExperience extends React.Component {
                 </p>
             );
         }
+
         let projectElements = null;
         let projectElementList = null;
         if (projects.length !== 0) {
-            projectElements = _.map(projects, (project) => {
+            projectElements = _.map(projects, (project, index) => {
+                const commaAndSpace = (index > 0) ? ', ' : ' ';
                 return (
                     <div key={ project.name } className="project">
-                        <a href={ project.url } target="_" className="hover-me with-after">{ project.name }</a>
+                        <a href={ project.url } target="_" className="hover-me with-after">
+                            { `${ commaAndSpace }${ project.name }` }
+                        </a>
                     </div>
                 )
             });
@@ -39,20 +47,29 @@ class WorkExperience extends React.Component {
                 </div>
             );
         }
+
         return (
             <div className="work-experience">
-                <Link to="/about_me/">About Me</Link>
-                <div className="inner">
-                    <a className="experience-name hover-me with-after" href={ url } target="_">
-                        <h4>{ name }</h4>
-                    </a>
-                    <p className="experience-dates">{ datesOfEmployment }</p>
-                    <p className="experience-role">{ role }</p>
-                    <p className="experience-description">{ description }</p>
-                    { projectElementList }
-                    { relevantSkillsElement }
-                    <div className="under-line">
-                        <div className="under-line-inner" />
+                <Link to="/about_me/">
+                    <span className="icon back-arrow-icon light" />
+                </Link>
+                <div className={ `header ${ id }` }>
+                    <div className="inner">
+                        <a className="experience-name" href={ url } target="_">
+                            <p className="page-title">{ name }</p>
+                        </a>
+                        <p className="experience-dates">{ datesOfEmployment }</p>
+                        <p className="experience-role">{ role }</p>
+                    </div>
+                </div>
+                <div className="body">
+                    <div className="inner">
+                        <p className="experience-description">{ description }</p>
+                        { projectElementList }
+                        { relevantSkillsElement }
+                        <div className="under-line">
+                            <div className="under-line-inner" />
+                        </div>
                     </div>
                 </div>
             </div>

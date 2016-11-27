@@ -6,18 +6,18 @@ const initialState = {
     introShown: true,
     selectedWorkExperience: null,
     workExperience: {
-        bevspot: {
+        'bevspot': {
             name: 'BevSpot',
-            role: 'Web Developer (Front-End/BackEnd)',
+            role: 'Software Engineer',
             datesOfEmployment: 'October 2015 - Current',
             url: 'https://www.bevspot.com',
             projects: [],
             description: 'At BevSpot, I work on a web app for bars and restaurants to manage their inventory, order from distributors, and track their sales data. We get a great deal of freedom to try new technologies as long as we can give sound reasons for how they might make our code better or improve the development process. As a result, I\'ve been able to start writing React apps and begin using TypeScript within the time that I\'ve been working here. In addition to working with interesting front-end technologies, I get to be involved in a lot of data design sessions and write a satisfying amount of Python and Java.',
             relevantSkills: ['JavaScript', 'ReactJS', 'TypeScript', 'Django', 'Java']
         },
-        mtc: {
+        'mtc': {
             name: 'MTC',
-            role: 'Web Developer (Front-End/Back-End)',
+            role: 'Web Developer',
             datesOfEmployment: 'October 2014 - October 2015',
             url: 'https://www.masstechnology.com/',
             projects: [{
@@ -27,7 +27,7 @@ const initialState = {
             description: 'At MTC, I mostly worked on an employee engagement software called Vocoli. I would receive a mock from our designer and build whole features from the ui to the stored procedures to get and set data.',
             relevantSkills: ['JavaScript', 'PHP', 'SQL']
         },
-        harvard_cid: {
+        'harvard-cid': {
             name: 'Harvard CID',
             role: 'Front-End Web Developer',
             datesOfEmployment: 'January 2014 - July 2014',

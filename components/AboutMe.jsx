@@ -22,9 +22,11 @@ class AboutMe extends React.Component {
 
         return (
             <div className="about-me">
-                <Link to="/">Home</Link>
+                <Link to="/">
+                    <span className="icon back-arrow-icon" />
+                </Link>
                 <div className="inner">
-                    <p>
+                    <p className="margin-top-2-em">
                         Want to know more about me, huh? I'm flattered! I was born in upstate New York and moved to Boston to attend Northeastern University. I graduated in 2015 with a dual degree in Music Technology and Interactive Media.
                         <br />
                         <br />
