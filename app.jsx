@@ -12,14 +12,15 @@ class App extends React.Component {
         const childElement = [];
         let childProps = {};
 
+        /*
+            Seems weird to do this given that any child of this component is a route,
+            and there will only ever be one child at time.
+            But this is necessary because of how React deals with children.
+        */
         React.Children.map(this.props.children, (child) => {
             childElement.push(child);
         });
 
-        /*
-            Because any child of this component is a route,
-            there should only ever be one at a time.
-        */
         if (childElement.length > 1) {
             throw new Error('Unexpectedly more than one child element in App.jsx');
         }
