@@ -55,11 +55,15 @@ class WorkExperience extends React.Component {
                 </Link>
                 <div className={ `header ${ this.props.params.id }` }>
                     <div className="inner">
-                        <a className="experience-name" href={ url } target="_">
-                            <p className="page-title">{ name }</p>
-                        </a>
-                        <p className="experience-dates">{ datesOfEmployment }</p>
-                        <p className="experience-role">{ role }</p>
+                        <div className="inner-section">
+                            <a className="experience-name" href={ url } target="_">
+                                <p className="page-title">{ name }</p>
+                            </a>
+                        </div>
+                        <div className="inner-section">
+                            <p className="experience-dates">{ datesOfEmployment }</p>
+                            <p className="experience-role">{ role }</p>
+                        </div>
                     </div>
                 </div>
                 <div className="body">

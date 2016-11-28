@@ -21,7 +21,7 @@ const initialState = {
                 name: 'Vocoli',
                 url: 'https://www.vocoli.com',
             }],
-            description: 'At MTC, I mostly worked on an employee engagement software called Vocoli. The jist of Vocoli is to empower employees through anonymous suggestions and polls, and to give management the tools to create surveys and gather information from the data collected by them. I would receive a mock from our designer and build whole features, from the UI, all the way through to the database.',
+            description: 'At MTC (Massachusetts Technology Corporation), I mostly worked on an employee engagement software called Vocoli. The jist of Vocoli is to empower employees through anonymous suggestions and polls, and to give management the tools to create surveys and gather information from the data collected by them. I would receive a mock from our designer and build whole features, from the UI, all the way through to the database.',
             relevantSkills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'SQL']
         },
         'harvard-cid': {
