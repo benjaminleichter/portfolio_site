@@ -12,7 +12,7 @@ const initialState = {
             datesOfEmployment: 'October 2015 - Current',
             url: 'https://www.bevspot.com',
             projects: [],
-            description: 'At BevSpot, I work on a web app for bars and restaurants to manage their inventory, order from distributors, and track their sales data. We get a great deal of freedom to try new technologies as long as we can give sound reasons for how they might make our code better or improve the development process. As a result, I\'ve been able to start writing React apps and begin using TypeScript. In addition to working with interesting front-end technologies, I get to be involved in a lot of data design sessions and write a good amount of Python and Java.',
+            description: 'At BevSpot, I work on a web app used by bars and restaurants to manage their inventory, order from distributors, and track their sales data. We get a great deal of freedom to try new technologies as long as we can give sound reasons for how they might make our code better or improve the development process. As a result, I\'ve been able to start writing React apps and begin using TypeScript. In addition to working with interesting front-end technologies, I get to be involved in a lot of data design sessions and write a good amount of Python and Java.',
             relevantSkills: ['JavaScript', 'ReactJS', 'TypeScript', 'Django', 'Java']
         },
         'mtc': {
