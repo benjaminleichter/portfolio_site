@@ -37,6 +37,7 @@ html {
         font-size: 3em;
         font-weight: 600;
         position: absolute;
+        left: 0;
         font-family: 'icomoon';
 
         &.light {
@@ -90,6 +91,10 @@ html {
         .body {
             float: left;
             width: 100%;
+
+            p {
+                font-size: 1em;
+            }
         }
         .inner {
             padding: $section_padding;
