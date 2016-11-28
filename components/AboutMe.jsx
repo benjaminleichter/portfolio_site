@@ -1,23 +1,25 @@
-import _ from 'lodash';
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+
+import Footer from './Footer.jsx';
 
 class AboutMe extends React.Component {
     render () {
         const {
             workExperience,
         } = this.props;
-
-        const workExperienceLinks = _.map(workExperience, (experience, id) => {
+        console.log(Object.keys(workExperience));
+        const workExperienceLinks = Object.keys(workExperience).map((id) => {
+            const name = workExperience[id].name;
             return (
                 <Link
                     className={ `work-experience-link ${ id }` }
                     key={ id }
                     to={ `work_experience/${id}/` }
                 >
-                    { experience.name }
+                    { name }
                 </Link>
-            )
+            );
         })
 
         return (
@@ -39,16 +41,7 @@ class AboutMe extends React.Component {
                     <div className="work-experience-list">
                         { workExperienceLinks }
                     </div>
-                    <div className="inner">
-                        <div className="under-line">
-                            <div className="under-line-inner" />
-                        </div>
-                        <span className="footer-text">
-                            Check out the code for this website on <a className="hover-me" href="https://github.com/benjaminleichter/portfolio_site" target="_">GitHub</a>.
-                            <br />
-                            Icons on this site created by <a className="hover-me" href="https://thenounproject.com/ryo.sato.7127/" target="_">Ryo Sato</a> and used under the <a className="hover-me" href="https://creativecommons.org/" target="_">Creative Commons License</a>.
-                        </span>
-                    </div>
+                    <Footer />
                 </div>
             </div>
         )

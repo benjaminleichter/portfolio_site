@@ -1,19 +1,11 @@
-import _ from 'lodash';
 import React from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import AboutMe from './components/AboutMe.jsx';
 import WorkExperience from './components/WorkExperience.jsx';
-
-import actions from './actions.js';
 
 class App extends React.Component {
     render() {
         const {
-            aboutMeShown,
-            boundActions,
-            introShown,
             workExperience,
         } = this.props;
 
@@ -52,16 +44,12 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        aboutMeShown: state.aboutMeShown,
-        introShown: state.introShown,
         workExperience: state.workExperience,
-    }
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        boundActions: bindActionCreators(actions, dispatch),
-    }
+    return {};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

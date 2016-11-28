@@ -2,6 +2,8 @@ import _ from 'lodash';
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
+import Footer from './Footer.jsx';
+
 class WorkExperience extends React.Component {
     render() {
         const {
@@ -67,10 +69,8 @@ class WorkExperience extends React.Component {
                         <p className="experience-description">{ description }</p>
                         { projectElementList }
                         { relevantSkillsElement }
-                        <div className="under-line">
-                            <div className="under-line-inner" />
-                        </div>
                     </div>
+                    <Footer />
                 </div>
             </div>
         );
