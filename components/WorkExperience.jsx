@@ -65,6 +65,7 @@ class WorkExperience extends React.Component {
                 <div className="body">
                     <div className="inner">
                         <p className="experience-description">{ description }</p>
+                        <br />
                         { projectElementList }
                         { relevantSkillsElement }
                     </div>
