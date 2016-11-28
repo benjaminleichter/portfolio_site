@@ -8,7 +8,6 @@ class AboutMe extends React.Component {
         const {
             workExperience,
         } = this.props;
-        console.log(Object.keys(workExperience));
         const workExperienceLinks = Object.keys(workExperience).map((id) => {
             const name = workExperience[id].name;
             return (
