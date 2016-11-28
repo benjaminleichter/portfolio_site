@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "webpack --progress --colors --watch",
+    "start": "webpack",
     "test": "npm test"
   },
   "repository": {
