@@ -17,8 +17,6 @@ class WorkExperience extends React.Component {
             key
         } = this.props;
 
-        const id = this.props.params.id;
-
         let relevantSkillsElement = null;
         if (relevantSkills.length !== 0) {
             const listOfSkills = relevantSkills.join(', ');
@@ -55,7 +53,7 @@ class WorkExperience extends React.Component {
                 <Link to="/">
                     <span className="icon back-arrow-icon light" />
                 </Link>
-                <div className={ `header ${ id }` }>
+                <div className={ `header ${ this.props.params.id }` }>
                     <div className="inner">
                         <a className="experience-name" href={ url } target="_">
                             <p className="page-title">{ name }</p>
